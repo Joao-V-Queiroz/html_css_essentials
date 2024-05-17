@@ -1,0 +1,59 @@
+.main_header{
+    width: 100%;
+    background-color: #2d3142;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.main_header h1{
+    color: #f0f0f0;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.main_header p{
+    color: #f0f0f0;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* formulário */ 
+.main_form{
+    width: 100%;
+    background-color: #bebebe;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main_form > header{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.main_form > header h1{
+    color: #D36833;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.main_form > header p{
+    color: #2d3142;
+    font-size: 1.2em;
+}
+
+.btn-primary{
+    background-color: #D36833 !important;
+    border: #D36833 !important;
+    opacity: 0.8;
+}
+
+.btn-primary:hover{
+    background-color: #D36833 !important;
+    border: #D36833 !important;
+    opacity: 1;
+}
+

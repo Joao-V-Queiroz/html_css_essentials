@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Formulário</title>
+</head>
+
+<body x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false">
+    <main>
+        <header class="bg-blue-800 mr-1 ml-1 mt-1 p-2 px-6 flex flex-row items-center rounded-lg">
+            <div class="mx-auto my-auto">
+                <h1 class="text-white font-bold text-3xl">Trabalhando com formulários</h1>
+            </div>
+        </header>
+        <form class="border border-solid bg-gray-300 rounded p-4 mr-2 ml-2 mt-2">
+            <div class="flex flex-row justify-end ml-4">
+                <label for="mensagem">Mensagem:</label>
+                <button class="bg-blue-800 text-white rounded p-1" x-on:click="alert('Alert Save!')">Alpine
+                    Save</button>
+            </div>
+            <fieldset>
+                <legend class="mb-4">Cadastro</legend>
+                <p class="mb-2">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </p>
+                <p class="mb-2">
+                    <label for="sexo">Sexo:</label>
+                    <input type="radio" id="sexo" name="sexo" value="feminino">Feminino
+                    <input type="radio" id="sexo" name="sexo" value="masculino">Masculino
+                </p>
+                <p class="mb-2">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                </p>
+                <p class="mb-2">
+                    <label for="tecnologia">Tecnologia preferida</label><br>
+                    <input type="checkbox" id="html" name="html">HTML5 <br>
+                    <input type="checkbox" id="css" name="css">CSS3 <br>
+                    <input type="checkbox" id="js" name="js">Jquery <br>
+                    <input type="checkbox" id="php" name="php">PHP <br>
+                </p>
+                <p class="mb-2">
+                    Selecione um arquivo: <input type="file" id="arquivos" name="arquivos">
+                </p>
+                <p class="mb-2">
+                    <label for="url">Informe o seu Linkedln</label>
+                    <input type="url" id="url" name="url">
+                </p>
+                <p class="mb-2">
+                    <label for="curso">Selecione um curso</label>
+                    <select name="cursos" id="cursos">
+                        <optgroup label="Front-end">
+                            <option value="html">HTML5</option>
+                            <option value="css">CSS3</option>
+                            <option value="js">JavaScript</option>
+                        </optgroup>
+                        <optgroup label="Back-end">
+                            <option value="php">PHP</option>
+                            <option value="node">NodeJS</option>
+                            <option value="python">Python</option>
+                    </select>
+                </p>
+                <p class="mb-2">
+                   <label for="avalia">Avalie o nosso cadastro</label>
+                   <input type="range" id="avalia" name="avalia" min="0" max="10">   
+                </p>
+                <p class="mb-2">
+                    <label for="color">Escolha a cor</label>
+                    <input type="color" id="color">
+                </p>
+                <p class="mb-2">
+                    <label for="data">Data de aniversário</label>
+                    <input type="date" id="data" name="data">
+                </p>
+                <p class="mb-2">
+                   <label for="horario">Horário da festa</label>
+                   <input type="time" id="horario" name="horario">
+                </p>
+                <p class="mb-2">
+                  <label for="data_hora">Data e Hora</label>
+                  <input type="datetime-local" id="data_hora" name="data_hora">
+                </p>
+                <p class="mb-2">
+                   <label for="mes">Mês de aniversário</label>
+                   <input type="month" id="mes" name="mes">
+                </p>
+                <p class="mb-2">
+                   <label for="semana">Semana de aniversário</label>
+                   <input type="week" id="semana" name="semana">
+                </p>
+                <p class="mb-2">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </p>
+                <p class="mb-2">
+                    <label for="confirma_senha">Confirmação de Senha:</label>
+                    <input type="password" id="confirma_senha" name="confirma_senha">
+                </p>
+                <div class="mb-2 flex flex-row">
+                    <div>
+                        <button class="bg-blue-800 text-white rounded p-1" type="submit" x-on:click="console.log('Formulário Salvo')">Save</button>
+                    </div>
+                    <div class="ml-4">
+                        <button class="bg-red-800 text-white rounded p-1" type="reset">Clear</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+
+</html>

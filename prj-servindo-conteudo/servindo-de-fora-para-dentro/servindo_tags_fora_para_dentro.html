@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Servindo tags de fora para dentro</title>
+</head>
+<body class="bg-gray-300" x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false">
+    <header class="bg-blue-800 mr-1 ml-1 mt-1 p-2 px-6 flex flex-row items-center rounded-lg">
+        <div class="mx-auto my-auto">
+            <h1 class="text-white font-bold text-3xl">Servindo tags de fora para dentro</h1>
+        </div>
+        <div class="mr-6">
+            <a href="#conteudo1" class="text-white font-bold mr-4" target="_blank">Conteúdo 1</a>
+            <a href="#conteudo2" class="text-white font-bold" target="_blank">Conteúdo 2</a>
+        </div>
+    </header>
+    <main>
+        <header class="flex flex-row items-center p-2">
+            <div class="mx-auto my-auto">
+                <h1 class="font-bold text-black text-lg">Curso Upinside</h1>
+            </div>
+        </header>
+        <article>
+            <header class="flex flex-row items-center p-2">
+                <div class="ml-1">
+                    <h2 class="font-bold text-black text-lg">Aprendendo a trabalhar com tags</h2>
+                </div>
+            </header>
+            <section id="modal" class="mt-1 mr-1 ml-1 p-2 px-6">
+                <header>
+                    <h3 class="text-md text-black font-bold">Modal Alpine e Tailwind</h3>
+                </header>
+                <div class="flex flex-row items-center justify-between mt-2">
+                    <button @click="isOpen = !isOpen" class="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg">Abrir modal</button>
+                </div>
+                <div x-show="isOpen" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="bg-gray-300 p-4 rounded-lg">
+                        <p class="text-2xl font-bold">Modal</p>
+                        <p>Conteúdo do modal</p>
+                        <button @click="isOpen = false" class="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg">Fechar modal</button>
+                    </div>
+                </div>
+            </section>
+            <section id="conteudo1" class="mt-4 mr-1 ml-1 p-2 px-6">
+                <header>
+                    <h1 class="text-md text-black font-bold">Contéudo 1</h1>
+                </header>
+                <div class="mt-2">
+                    <p>Contéudo 1</p>
+                </div>
+        </article>
+    </main>
+    <footer class="bg-blue-800 mr-1 ml-1 mt-4 p-2 px-6 flex flex-row items-center rounded-lg">
+        <div class="mx-auto my-auto">
+            <h1 class="text-white font-bold text-lg">© 2020 AlpineJs - Todos os direitos reservados</h1>
+        </div>
+    </footer>
+</body>
+</html>

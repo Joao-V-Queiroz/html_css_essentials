@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="icon" type="image/png" href="midias/alpine.png">
+    <title>Iniciando com AlpineJs</title>
+</head>
+
+<body class="bg-white" x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false">
+
+    <!-- bg = background, p = padding, px = padding horizontal, py = padding vertical, border = borda, border-solid = tipo de borda, rounded-lg = borda arredondada -->
+    <header class="bg-blue-800 mr-1 ml-1 mt-1 p-2 px-6 flex flex-row items-center rounded-lg">
+        <img src="midias/59030169.png" alt="Logo Alpine" class="w-16 h-16">
+        <div class="mx-auto my-auto">
+            <h1 class="text-white font-bold text-3xl">Estudando AlpineJs</h1>
+        </div>
+        <div>
+            <audio src="midias/musica.mp3" controls></audio>
+        </div>
+    </header>
+
+    <main>
+        <!-- class="bg-gray-400 p-16 mr-1 ml-1 rounded-lg mt-4 overflow-auto" -->
+        <article>
+            <section class="ml-1 mr-1 mt-6 p-4 bg-gray-300 rounded">
+                <header class="flex flex-row justify-between">
+                    <h1 class="text-2xl font-semibold">Vamos Começar</h1>
+                </header>
+                <article>
+                    <header class="mt-2">
+                        <h2 class="text-lg font-semibold">I Love Alpine</h2>
+                    </header>
+                    <br>
+                    <p>Crie um arquivo HTML em branco em algum lugar do seu computador com um nome
+                        como:i-love-alpine.html</p>
+                    <p>Usando um editor de texto, preencha o arquivo com este conteúdo:</p>
+                    <br>
+                    <code>
+                        &lt;html&gt;
+
+                        <br>
+
+                        &lt;head&gt;
+                        &lt;script defer
+                        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;
+                        &lt;/head&gt;
+
+                        <br>
+
+                        &lt;body&gt;
+                        &lt;h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"&gt;&lt;/h1&gt;
+                        &lt;/body&gt;
+
+                        <br>
+
+                        &lt;/html&gt;
+                    </code>
+                    <br><br>
+                    <p>O resultado será o seguinte: </p>
+                    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+                    <br>
+                    <p>Agora que você está pronto para brincar, vejamos três exemplos práticos como base para ensinar o
+                        básico do Alpine. Ao final deste exercício, você deverá estar mais do que equipado para começar
+                        a construir coisas por conta própria. Vamooos.</p>
+                    <br>
+
+                    <ol type="1">
+                        <li><a href="#counter"><b>Building a counter</b></a></li>
+                        <li><a href="#dropdown"><b>Building a dropdown</b></a></li>
+                        <li><a href="#search"><b>Building a search Input</b></a></li>
+                    </ol>
+                </article>
+            </section>
+            <!-- Seção "Building a counter" -->
+            <section id="counter" class="ml-1 mr-1 mt-6 p-4 bg-gray-300 rounded">
+                <header class="flex flex-row justify-between">
+                    <h1 class="text-2xl font-semibold">Building a counter</h1>
+                </header>
+                <article>
+                    <header class="mt-2">
+                        <h2 class="text-lg font-semibold">Botão Contador</h2>
+                    </header>
+                    <p>Vamos começar com um componente "contador" simples para demonstrar os fundamentos da escuta de
+                        estados e eventos no Alpine, dois recursos principais.</p>
+                    <br>
+                    <p>Insira o seguinte na &lt;html&gt; tag:</p>
+                    <br>
+                    <code>
+                        &lt;div x-data="{ count: 0 }"&gt;
+                        <br>
+                        &lt;button x-on:click="count++">Increment&lt;/button\&gt;
+                        <br>
+                        &lt;span x-text="count"&gt;&lt;/span&gt;
+                        <br>
+                        &lt;/div&gt;
+                    </code>
+                    <br>
+                    <p>O resultado será o seguinte:</p>
+                    <br>
+                    <div class="flex flex-row">
+                        <div x-data="{ count: 0 }">
+                            <button class="bg-blue-800 rounded text-white" x-on:click="count++">Increment</button>
+                            <span x-text="count"></span>
+                        </div>
+                        <div class="ml-2" x-data="{ count: 0 }">
+                            <button class="bg-blue-800 rounded text-white" x-on:click="count--">Decrement</button>
+                            <span x-text="count"></span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Seção "Building a dropdown" -->
+            <section id="dropdown" class="ml-1 mr-1 mt-6 p-4 bg-gray-300 rounded">
+                <header class="flex flex-row justify-between">
+                    <h1 class="text-2xl font-semibold">Building a dropdown</h1>
+                </header>
+                <article>
+                    <header class="mt-2">
+                        <h2 class="text-lg font-semibold">Construindo um menu suspenso</h2>
+                    </header>
+                    <br>
+                    <p>Agora que vimos algumas funcionalidades básicas, vamos continuar e dar uma olhada em uma diretiva
+                        importante no Alpine: <b>x-show</b>, construindo um componente "suspenso" inventado.</p>
+                    <br>
+                    <p>Insira o seguinte código na &lt;<b>body</b>&gt; tag:</p>
+                    <br>
+                    <code>
+                        &lt;div x-data="{ open: false }"&gt;
+                        <br>
+                        &lt;button @click="open = ! open">Toggle&lt;/button&gt;
+                        <br>
+                        &lt;div x-show="open" @click.outside="open = false"&gt;Contents...&lt;/div&gt;`
+                        <br>
+                        &lt;/div&gt;
+                    </code>
+                    <br><br>
+                    <p>O resultado será o seguinte:</p>
+                    <br>
+                    <div x-data="{ open: false }">
+                        <button class="bg-blue-800 text-white rounded" @click="open = ! open">Toggle</button>
+                        <div x-show="open" @click.outside="open = false">Conteúdo...</div>
+                    </div>
+                </article>
+            </section>
+            <!-- Seção "Building a search Input" -->
+            <section id="search" class="ml-1 mr-1 mt-6 p-4 bg-gray-300 rounded">
+                <header class="flex flex-row justify-between">
+                    <h1 class="text-2xl font-semibold">Building a search Input</h1>
+                </header>
+                <article>
+                    <header class="mt-2">
+                        <h2 class="text-lg font-semibold">Construindo um menu suspenso</h2>
+                    </header>
+                    <br>
+                    <p>Vamos agora construir um componente mais complexo e apresentar algumas outras diretivas e
+                        padrões.</p>
+                    <br>
+                    <p>Insira o seguinte código na &lt;<b>body</b>&gt; tag:</p>
+                    <br>
+                    <pre>
+                        &lt;div x-data="{
+                            search: '',
+                        
+                            items: ['foo', 'bar', 'baz'],
+                        
+                            get filteredItems() {
+                                return this.items.filter(
+                                    i => i.startsWith(this.search)
+                                )
+                            }
+                        }"&gt;
+                        &lt;input x-model="search" placeholder="Search..."&gt;
+
+                        &lt;ul&gt;
+                        &lt;template x-for="item in filteredItems" :key="item"&gt;
+                        &lt;li x-text="item"&gt;&lt;/li&gt;
+                        &lt;/template&gt;
+                        &lt;/ul&gt;
+                        &lt;/div&gt;
+                    </pre>
+                <br>
+                <p>O resultado será o seguinte:</p>
+                <br>
+                <div x-data="{
+                    search: '',
+                    items: ['foo', 'bar', 'baz'],
+                    get filteredItems() {
+                        return this.items.filter(
+                            i => i.startsWith(this.search)
+                        )
+                    }
+                }">
+                    <input class="p-2 rounded" x-model="search" placeholder="Search...">
+                    <ul>
+                        <template x-for="item in filteredItems" :key="item">
+                            <li x-text="item"></li>
+                        </template>
+                    </ul>    
+                </article>
+            </section>
+            <div class="ml-1 mr-1 mt-6 p-4 bg-blue-800 rounded">
+                <div class="flex flex-row items-center justify-between">
+                    <div class="text-white text-3xl font-bold ml-16">Cursos para aprender AlpineJs</div>
+                    <div class="flex justify-center mr-14 flex-grow">
+                        <iframe width="800" height="500" src="https://www.youtube.com/embed/rT3MAmX-jxI" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>            
+        </article>
+    </main>
+    <footer class="bg-blue-800 mr-1 ml-1 mt-4 p-2 px-6 flex flex-row items-center rounded-lg">
+        <div class="mx-auto my-auto">
+            <h1 class="text-white font-bold text-lg">© 2020 AlpineJs - Todos os direitos reservados</h1>
+        </div>
+    </footer>
+</body>
+
+</html>

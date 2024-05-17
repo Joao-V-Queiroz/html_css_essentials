@@ -1,0 +1,145 @@
+body{
+    background-color: rgb(189, 188, 188);
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    margin-left: 30px;
+}
+
+h2{
+    color: black;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.subtitulo{
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+h3{
+    color: black;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+p{
+    color: black;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+ol{
+    color: black;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+li{
+    color: black;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.cabecalho{
+    background-color: rgb(48, 48, 160);
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.logo{
+    float: left;
+    width: 20%;
+    height: 20%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.rodape_final{
+    background-color: rgb(48, 48, 160);
+    padding: 10px;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    bottom: 0;
+}
+
+.menu_principal{
+    background-color: rgb(48, 48, 160);
+    padding: 35px;
+    color: white;
+    border-radius: 30px;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 50px;
+    font-size: 20px;
+    bottom: 0;
+}
+
+.menu_home{
+    padding: 10px;
+    color: white;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    bottom: 0;
+}
+
+.menu_curso{
+    padding: 10px;
+    color: white;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    bottom: 0;
+}
+
+.menu_sobre{
+    padding: 10px;
+    color: white;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    bottom: 0;
+}
+
+.menu_contato{
+    padding: 10px;
+    color: white;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    bottom: 0;
+}
+
+.menu_alpine{
+    padding: 10px;
+    color: white;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    bottom: 0;
+}
